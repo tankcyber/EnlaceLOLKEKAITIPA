@@ -24,7 +24,7 @@ GROQ_API_KEY = "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"
 # Z.ai API (для анализа изображений)
 ZAI_API_KEY = "8bae64bb6157479f8ff5673f8802e78f.lSHKdbTutqxT9Xrh"  # Вставьте ваш ключ из https://z.ai/manage-apikey
 ZAI_API_URL = "https://api.z.ai/api/paas/v4/chat/completions"
-ZAI_MODEL = "glm-5v-turbo"  # Модель для анализа изображений
+ZAI_MODEL = "glm-4.6v-flash"  # Модель для анализа изображений
 
 OWNER_ID = 5439940299
 
@@ -36,12 +36,12 @@ MAX_HISTORY_LENGTH = 15
 MODELS = {
     "llama-3.3-70b-versatile": "🦙 Llama 70B (Groq, текст)",
     "llama-3.1-8b-instant": "⚡ Llama 8B (Groq, быстрая)",
-    "zai-vision": "👁️ Z.ai Vision (анализ фото, уравнения)"
+    "zai-vision": "👁️ glm-4.6v-flash (анализ фото, уравнения)"
 }
 
 DEFAULT_MODEL = "llama-3.3-70b-versatile"
 FAST_MODEL = "llama-3.1-8b-instant"
-VISION_MODEL = "zai-vision"
+VISION_MODEL = "glm-4.6v-flash"
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
