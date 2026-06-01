@@ -34,7 +34,7 @@ GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 # Инициализация бота
 bot = Bot(
-    token="8666211095:AAGk41YRGTBIaezj5MzKQ1eFTIMVV8YIiqM",
+    token="8857441987:AAH18rhUKO8MvxzJvm0TPlCaxksHrlHycww",
     default=DefaultBotProperties(parse_mode="Markdown")
 )
 
