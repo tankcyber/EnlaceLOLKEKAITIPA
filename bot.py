@@ -23,8 +23,8 @@ GROQ_API_KEY = "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"
 
 # Z.ai API (для анализа изображений)
 ZAI_API_KEY = "8bae64bb6157479f8ff5673f8802e78f.lSHKdbTutqxT9Xrh"  # Вставьте ваш ключ из https://z.ai/manage-apikey
-ZAI_API_URL = "https://api.z.ai/v1/chat/completions"
-ZAI_MODEL = "zai-vision-model"  # Модель для анализа изображений
+ZAI_API_URL = "https://api.z.ai/api/paas/v4/chat/completions"
+ZAI_MODEL = "glm-5v-turbo"  # Модель для анализа изображений
 
 OWNER_ID = 5439940299
 
