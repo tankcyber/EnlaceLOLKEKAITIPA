@@ -18,7 +18,7 @@ from typing import Tuple, Optional
 
 # ========== КОНФИГУРАЦИЯ ==========
 GROQ_API_KEY = "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"
-OPENROUTER_API_KEY = "sk-or-v1-ваш_ключ_от_openrouter"  # Вставьте сюда ваш ключ!
+OPENROUTER_API_KEY = "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"  # Вставьте сюда ваш ключ!
 OWNER_ID = 5439940299
 STAR_PRICE = 30
 
