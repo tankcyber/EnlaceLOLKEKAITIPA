@@ -27,7 +27,7 @@ HISTORY_FILE = "chat_history.json"
 MAX_HISTORY_LENGTH = 15
 
 # ========== ВСЕ БЕСПЛАТНЫЕ МОДЕЛИ GROQ ==========
-VERIFIED_GROQ_MODELS = {
+MODELS = {
     # Production Models (стабильные, рекомендуются)
     "llama-3.3-70b-versatile": "🦙 Llama 3.3 70B (мощная, 280 t/s)",
     "llama-3.1-8b-instant": "⚡ Llama 3.1 8B (быстрая, 560 t/s)",
