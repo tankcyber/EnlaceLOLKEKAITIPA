@@ -40,13 +40,6 @@ MODELS = {
     
     # Preview Models (экспериментальные, могут быть менее стабильны)
     "meta-llama/llama-4-scout-17b-16e-instruct": "👁️ Llama 4 Scout (анализ фото!, 750 t/s)",
-    "meta-llama/llama-4-maverick-17b-128e-instruct": "🦙 Llama 4 Maverick (600 t/s)",
-    "qwen/qwen3-32b": "🚀 Qwen 3 32B (400 t/s)",
-    "qwen/qwq-32b": "🤔 Qwen QWQ 32B (решения задач, 400 t/s)",
-    
-    # Audio models (для голоса)
-    "whisper-large-v3": "🎤 Whisper V3 (распознавание речи)",
-    "whisper-large-v3-turbo": "⚡ Whisper V3 Turbo (быстрое распознавание)",
 }
 
 DEFAULT_MODEL = "llama-3.3-70b-versatile"
