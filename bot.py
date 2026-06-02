@@ -18,6 +18,7 @@ from typing import Tuple, Optional
 
 # ========== КОНФИГУРАЦИЯ ==========
 GROQ_API_KEY = "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"
+OPENROUTER_API_KEY = "sk-or-v1-ваш_ключ_от_openrouter"  # Вставьте сюда ваш ключ!
 OWNER_ID = 5439940299
 STAR_PRICE = 30
 
@@ -33,6 +34,12 @@ MODELS = {
     "qwen/qwen3-32b": "🚀 Qwen 3 32B (высокий лимит)",
     "openai/gpt-oss-120b": "🏛️ GPT-OSS 120B (мощная)",
     "groq/compound": "💻 Compound (кодинг)",
+    # ----- OPENROUTER (бесплатные модели, через ваш ключ OpenRouter) -----
+    "nvidia/nemotron-3-super": "🔷 Nemotron 3 Super (1M контекст)",
+    "deepseek/deepseek-v4-flash": "🐋 DeepSeek V4 Flash (284B параметров)",
+    "google/gemma-4-31b-it": "🌟 Gemma 4 31B (мультимодальная)",
+    "nvidia/nemotron-nano-2-vl": "📹 Nemotron Nano 2 VL (видео+OCR)",
+    "inclusionai/ling-2.6-1t": "🧠 Ling-2.6-1T (триллион параметров!)",
 }
 
 DEFAULT_MODEL = "llama-3.3-70b-versatile"
@@ -49,6 +56,53 @@ bot = Bot(
 dp = Dispatcher(storage=MemoryStorage())
 user_models = {}
 chat_histories = defaultdict(list)
+
+# ========== OPENROUTER API (БЕСПЛАТНЫЕ МОДЕЛИ) ==========
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+async def ask_openrouter(question: str, model: str, system_prompt: str = None, image_base64: str = None) -> str:
+    """Запрос к OpenRouter (бесплатные модели)"""
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://t.me/your_bot",
+        "X-Title": "AI Assistant Bot"
+    }
+    
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    
+    if image_base64:
+        messages.append({
+            "role": "user",
+            "content": [
+                {"type": "text", "text": question},
+                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{image_base64}"}}
+            ]
+        })
+    else:
+        messages.append({"role": "user", "content": question})
+    
+    payload = {
+        "model": model,
+        "messages": messages,
+        "max_tokens": 1500,
+        "temperature": 0.2
+    }
+    
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.post(OPENROUTER_URL, headers=headers, json=payload, timeout=60) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    return data["choices"][0]["message"]["content"]
+                elif resp.status == 429:
+                    return "⏰ Лимит запросов OpenRouter. Попробуй через минуту."
+                else:
+                    return f"❌ OpenRouter ошибка: {resp.status}"
+        except Exception as e:
+            return f"⚠️ Ошибка OpenRouter: {str(e)}"
 
 # ========== ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ УДАЛЕНИЯ ==========
 async def safe_delete_message(message):
