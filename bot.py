@@ -30,6 +30,12 @@ MAX_HISTORY_LENGTH = 25
 MODELS = {
     "llama-3.3-70b-versatile": "🦙 Llama 70B (мощная, фото через OCR)",
     "llama-3.1-8b-instant": "⚡ Llama 8B (быстрая, фото через OCR)",
+    
+# НОВЫЕ БЕСПЛАТНЫЕ МОДЕЛИ (100% проверено!)
+    "meta-llama/llama-4-scout-17b-16e-instruct": "👁️ Llama 4 Scout (анализ фото!)",
+    "qwen/qwen3-32b": "🚀 Qwen 3 32B (высокий лимит 60 RPM)",
+    "openai/gpt-oss-120b": "🏛️ GPT-OSS 120B (мощная)",
+    "groq/compound": "💻 Compound (кодинг)", 
 }
 
 DEFAULT_MODEL = "llama-3.3-70b-versatile"
