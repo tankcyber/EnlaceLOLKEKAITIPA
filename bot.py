@@ -27,18 +27,26 @@ HISTORY_FILE = "chat_history.json"
 MAX_HISTORY_LENGTH = 15
 
 # ========== ВСЕ БЕСПЛАТНЫЕ МОДЕЛИ GROQ ==========
-MODELS = {
-    "llama-3.3-70b-versatile": "🦙 Llama 70B (мощная)",
-    "llama-3.1-8b-instant": "⚡ Llama 8B (быстрая)",
-    "meta-llama/llama-4-scout-17b-16e-instruct": "👁️ Llama 4 Scout (анализ фото!)",
-    "qwen/qwen3-32b": "🚀 Qwen 3 32B (высокий лимит)",
-    "openai/gpt-oss-120b": "🏛️ GPT-OSS 120B (мощная)",
-    "groq/compound": "💻 Compound (кодинг)",
-    # НОВЫЕ МОДЕЛИ
-    "moonshotai/kimi-k2-instruct": "🌙 Kimi K2 (60 RPM, высокий лимит)",
-    "openai/gpt-oss-20b": "🏛️ GPT-OSS 20B (лёгкая версия)",
-    "groq/compound-mini": "💻 Compound Mini (быстрый кодинг)",
-    "allam-2-7b": "🕌 Allam 2 7B (многоязычная)",
+VERIFIED_GROQ_MODELS = {
+    # Production Models (стабильные, рекомендуются)
+    "llama-3.3-70b-versatile": "🦙 Llama 3.3 70B (мощная, 280 t/s)",
+    "llama-3.1-8b-instant": "⚡ Llama 3.1 8B (быстрая, 560 t/s)",
+    "openai/gpt-oss-120b": "🏛️ GPT-OSS 120B (500 t/s)",
+    "openai/gpt-oss-20b": "🏛️ GPT-OSS 20B (1000 t/s, очень быстрая)",
+    
+    # Systems (специальные системы Groq)
+    "groq/compound": "💻 Compound (кодинг + поиск, 450 t/s)",
+    "groq/compound-mini": "💻 Compound Mini (быстрый кодинг, 450 t/s)",
+    
+    # Preview Models (экспериментальные, могут быть менее стабильны)
+    "meta-llama/llama-4-scout-17b-16e-instruct": "👁️ Llama 4 Scout (анализ фото!, 750 t/s)",
+    "meta-llama/llama-4-maverick-17b-128e-instruct": "🦙 Llama 4 Maverick (600 t/s)",
+    "qwen/qwen3-32b": "🚀 Qwen 3 32B (400 t/s)",
+    "qwen/qwq-32b": "🤔 Qwen QWQ 32B (решения задач, 400 t/s)",
+    
+    # Audio models (для голоса)
+    "whisper-large-v3": "🎤 Whisper V3 (распознавание речи)",
+    "whisper-large-v3-turbo": "⚡ Whisper V3 Turbo (быстрое распознавание)",
 }
 
 DEFAULT_MODEL = "llama-3.3-70b-versatile"
