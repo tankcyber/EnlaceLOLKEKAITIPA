@@ -35,11 +35,9 @@ MODELS = {
     "openai/gpt-oss-120b": "🏛️ GPT-OSS 120B (мощная)",
     "groq/compound": "💻 Compound (кодинг)",
     # ----- OPENROUTER (бесплатные модели, через ваш ключ OpenRouter) -----
-    "nvidia/nemotron-3-super": "🔷 Nemotron 3 Super (1M контекст)",
-    "deepseek/deepseek-v4-flash": "🐋 DeepSeek V4 Flash (284B параметров)",
-    "google/gemma-4-31b-it": "🌟 Gemma 4 31B (мультимодальная)",
-    "nvidia/nemotron-nano-2-vl": "📹 Nemotron Nano 2 VL (видео+OCR)",
-    "inclusionai/ling-2.6-1t": "🧠 Ling-2.6-1T (триллион параметров!)",
+    "moonshotai/kimi-k2:free": "🔥 Kimi K2 (OpenRouter, бесплатно)",
+    "moonshotai/kimi-k2.6": "🔥 Kimi K2.6 (OpenRouter, платная)",
+    "openai/gpt-4.1": "🧠 GPT-4.1 (OpenRouter, платная)",
 }
 
 DEFAULT_MODEL = "llama-3.3-70b-versatile"
